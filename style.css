@@ -1,3 +1,11 @@
+#calculator {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding-top: 10%;
+}
+
 #screen{
     width:240px;
     height:73px;

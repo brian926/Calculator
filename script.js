@@ -1,12 +1,18 @@
 $(document).ready(function(){
 
-	var answer = 0;
-	var inputs = "";
-	var inputNum;
-	var inputNumArr = [];
-	var operaterInp = [];
+	let answer = 0;
+	let inputs = "";
+	let inputNum;
+	let inputNumArr = [];
+	let operaterInp = [];
+	let last = false;
 
 	$(".numbers").click(function(){
+
+		if (last == true) {
+			clear()
+			last = false
+		}
 
 		document.getElementById("screen").innerHTML += $(this).val();
 		inputs += $(this).val();
@@ -32,13 +38,13 @@ $(document).ready(function(){
                 break;
 			}
 
-		operaterInp.pop();
+			operaterInp.pop();
 		}
 	});
 
 	$("#add").click(function() {
 		inputNumArr.push(inputNum);
-		document.getElementById("screen").innerHTML = "";
+		document.getElementById("screen").innerHTML += "+";
 		operaterInp.push("add");
 		inputs = "";
 		console.log(inputNumArr[0]);
@@ -46,7 +52,7 @@ $(document).ready(function(){
 
 	$("#minus").click(function(){
 		inputNumArr.push(inputNum);
-        document.getElementById("screen").innerHTML="";
+        document.getElementById("screen").innerHTML += "-";
         operaterInp.push("minus");
         inputs="";
         console.log(inputNumArr);
@@ -54,14 +60,14 @@ $(document).ready(function(){
 
 	$("#times").click(function(){
 		inputNumArr.push(inputNum);
-        document.getElementById("screen").innerHTML="";
+        document.getElementById("screen").innerHTML += "*";
         operaterInp.push("times");
         inputs="";
 	});
 
 	$("#divide").click(function(){
 		inputNumArr.push(inputNum);
-        document.getElementById("screen").innerHTML="";
+        document.getElementById("screen").innerHTML += "/";
         operaterInp.push("divide");
         inputs="";
 	});
@@ -70,6 +76,11 @@ $(document).ready(function(){
 		answer = inputNumArr[0];
 		document.getElementById("screen").innerHTML = answer;
 		inputs = "";
+		last = true;
+	})
+
+	$('#clear').click(function(){
+		clear()
 	})
 
 	function add(a, b) {
@@ -89,4 +100,7 @@ $(document).ready(function(){
 		inputNumArr[0] = a / b;
 	}
 
+	function clear() {
+		document.getElementById("screen").innerHTML = "";
+	}
 });

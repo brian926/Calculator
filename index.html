@@ -3,17 +3,20 @@
 	<head>
 		<title>JavaScript Calculator</title>
 		<meta charset="UTF-8">
-		<link rel="stylesheet" href="cstyles.css">
+		<link rel="stylesheet" href="style.css">
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+		<script src="script.js"></script>
 	</head>
 
 	<body>
-	<div id="calculator">
-		<div id="screen"></div>
+	<section id="calculator">
+		<section id="screen"></section>
 		<table>
 			<tr>
 				<td><button value="7" class="numbers">7</button></td>
 				<td><button value="8" class="numbers">8</button></td>
 				<td><button value="9" class="numbers">9</button></td>
+				<td><button id="clear">clr</button></td>
 			</tr>
 			<tr>
 				<td><button value="4" class="numbers">4</button></td>
@@ -36,11 +39,7 @@
 				<td><button id="equalTo">=</button></td>
 			</tr>
 		</table>
-	</div>
-
-	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
-
-	<script src="script.js"></script>
+	</section>
 	</body>
 
 </html>
